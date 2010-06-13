@@ -1,6 +1,6 @@
 use strict;
 package Data::Matcher::Rule; # for Pod::Weaver
-#ABSTRACT: main code for Data-Matcher, does matching based on rules given 
+#ABSTRACT: main code for Data-Matcher, does matching based on rules given
 
 use MooseX::Declare 0.33;
 class Data::Matcher::Rule {
@@ -159,7 +159,7 @@ class Data::Matcher::Rule {
     }
     method _is_flag_global( Str $name ) {
         return grep {
-               $_->name eq $name 
+               $_->name eq $name
             && $_->can( 'associated_attribute' )
             && $_->associated_attribute->can( 'is_dm_global' )
             && $_->associated_attribute->is_dm_global
@@ -167,7 +167,7 @@ class Data::Matcher::Rule {
     }
     method _is_flag_local( Str $name ) {
         return grep {
-               $_->name eq $name 
+               $_->name eq $name
             && $_->can( 'associated_attribute' )
             && $_->associated_attribute->can( 'is_dm_local' )
             && $_->associated_attribute->is_dm_local
@@ -183,22 +183,16 @@ class Data::Matcher::Rule {
 
     multi method check( Object $data ) {
         my $meta = Class::MOP::Class->initialize( ref $data );
-        warn ">>>>>>>>>>>>>>>>>>>>>>>> HERE <<<<<<<<<<<<<<<<<<<<<<";
         if ( any { $_->has_read_method } $meta->get_all_attributes ) {
-        warn ">>>>>>>>>>>>>>>>>>>>>>>> HERE <<<<<<<<<<<<<<<<<<<<<<";
             my %object;
             tie %object, 'Tie::MooseObject', $data, ro;
             use Data::Dumper;
-            warn "]]]]]]]]]]]]]]]] Matching on: ", Dumper( \%object ), "\n";
             return $self->check( \%object );
         }
-        warn ">>>>>>>>>>>>>>>>>>>>>>>> HERE <<<<<<<<<<<<<<<<<<<<<<";
         my $to_string = $data->can( 'toString' ) || $data->can( 'to_string' ) || $data->can( 'value' );
         if ( $to_string ) {
-        warn ">>>>>>>>>>>>>>>>>>>>>>>> HERE <<<<<<<<<<<<<<<<<<<<<<";
             return $self->check( [ $data->$to_string() ] );
         }
-        warn ">>>>>>>>>>>>>>>>>>>>>>>> HERE <<<<<<<<<<<<<<<<<<<<<<";
         warnings::warnif("Can not find a way to handle " . ref($data));
         return 0;
     }
@@ -263,37 +257,28 @@ class Data::Matcher::Rule {
         for ( my $i = 0; $i < @$opt; ++$i ) {
             my $cur = $opt->[$i];
             my $nxt = $opt->[$i + 1];
-            warn "** working on $i: $cur";
             if ( $cur->{type} eq 'flag' ) {
-                warn "** is flag";
                 $cur->{code}->();
             }
             elsif ( $cur->{type} eq 'match' ) {
-                warn "** is match";
                 if ( $self->keys ) {
                     $num_tests++;
-                    warn "** has keys set";
-                    $match = any { warn "** testing $_"; $cur->{code}->( $_ ) } keys %$data;
+                    $match = any { $cur->{code}->( $_ ) } keys %$data;
                 }
                 elsif ( $self->_hash_type ) {
-                    warn "** _hash_type";
                     $num_tests++;
                     $match = any {
-                        warn "** testing $_ => $data->{$_}";
                         $cur->{code}->( $_ ) && $nxt->{code}->( $data->{$_} )
                     } keys %$data;
                 }
                 else {
-                    warn "** not hash or keys";
                     $num_tests++;
-                    $match = any { warn "** testing $_"; $cur->{code}->( $_ ) } values %$data;
+                    $match = any { $cur->{code}->( $_ ) } values %$data;
                 }
                 if ( $self->and and !$match ) {
-                    warn "** last for no match and";
                     last;
                 }
                 elsif ( $self->or and $match ) {
-                    warn "** last for match or";
                     last;
                 }
             }
@@ -303,9 +288,7 @@ class Data::Matcher::Rule {
             ++$i if $self->_hash_type;
         }
 
-        warn "** finished loop";
         if ( $match and $self->only and $num_tests != keys %$data ) {
-            warn "** setting match to 0 for only test";
             $match = 0;
         }
         return $match;
