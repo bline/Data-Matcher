@@ -154,7 +154,7 @@ objects. For example:
             -all => 1,
             qw(bar bat)
         ]
-    }, $data; 
+    }, $data;
 
 =head1 Flags
 
@@ -273,7 +273,7 @@ Also aliased:
 =item C<< -keys => 0|1 >>
 
 For array matching a hash, this check the keys of the hash
- 
+
 =over
 
 =item C<< -noKeys => 0|1 >>
