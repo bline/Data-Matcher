@@ -1,3 +1,7 @@
+use strict;
+package Data::Matcher::Types; # for Pod::Weaver
+#ABSTRACT: sets up basic types for Data::Matcher
+
 use MooseX::Declare;
 
 class Data::Matcher::Types {
@@ -9,7 +13,7 @@ class Data::Matcher::Types {
     class_type DMTypeConstraint, { class => 'Moose::Meta::TypeConstraint' };
     coerce DMTypeConstraint,
         from Str,
-            via { subtype $_ }; 
+            via { subtype $_ };
     subtype DMRuleOption, as ArrayRef|HashRef|Str|RegexpRef|DMTypeConstraint|DMRule;
     class_type DMIOHandle, { class => 'IO::Handle' };
 
@@ -18,14 +22,6 @@ class Data::Matcher::Types {
 1;
 
 __END__
-
-=head1 NAME
-
-Data::Matcher::Types - sets up basic types for Data::Matcher
-
-=head1 DESCRIPTION
-
-Sets up types for Data::Matcher.
 
 =head1 TYPES
 
@@ -47,23 +43,9 @@ Rules can contain other rules.
 
 Rules can contain Moose type constraints.
 
+=item C<DMIOHandle> - IO::Handle object
+
 =back
-    
+ 
 =back
-
-=head1 AUTHOR
-
-Scott Beck E<lt>scottbeck@gmail.comE<gt>
-
-
-=head1 COPYRIGHT
-
-Copyright 2011 by Scott A Beck E<lt>scottbeck@gmail.comE<gt>.
-
-This program is free software; you can redistribute it and/or
-modify it under the same terms as Perl itself.
-
-See F<http://www.perl.com/perl/misc/Artistic.html>
-
-=cut
 
