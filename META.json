@@ -1,0 +1,57 @@
+{
+   "abstract" : "simple matching on perl data structures and moose objects",
+   "author" : [
+      "Scott Beck <scottbeck@gmail.com>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.101550, CPAN::Meta::Converter version 2.101610",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Data-Matcher",
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.31"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Carp" : 0,
+            "Data::Dumper" : 0,
+            "IO::Handle" : "1.28",
+            "List::MoreUtils" : "0.22",
+            "Moose" : "1.03",
+            "Moose::Role" : 0,
+            "Moose::Util::TypeConstraints" : 0,
+            "MooseX::Declare" : "0.33",
+            "MooseX::Has::Sugar" : "0.0405",
+            "MooseX::MultiMethods" : "0.10",
+            "MooseX::Types" : 0,
+            "MooseX::Types::Moose" : "0.21",
+            "MooseX::Types::Structured" : "0.21",
+            "Tie::MooseObject" : "0.0001",
+            "warnings::register" : 0
+         }
+      },
+      "test" : {
+         "requires" : {
+            "English" : 0,
+            "Test::More" : 0
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/bline/Data-Matcher.git",
+         "web" : "http://github.com/bline/Data-Matcher"
+      }
+   },
+   "version" : "0.0002"
+}

@@ -1,0 +1,35 @@
+---
+abstract: 'simple matching on perl data structures and moose objects'
+author:
+  - 'Scott Beck <scottbeck@gmail.com>'
+build_requires:
+  English: 0
+  Test::More: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.31
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.101550, CPAN::Meta::Converter version 2.101610'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Data-Matcher
+requires:
+  Carp: 0
+  Data::Dumper: 0
+  IO::Handle: 1.28
+  List::MoreUtils: 0.22
+  Moose: 1.03
+  Moose::Role: 0
+  Moose::Util::TypeConstraints: 0
+  MooseX::Declare: 0.33
+  MooseX::Has::Sugar: 0.0405
+  MooseX::MultiMethods: 0.10
+  MooseX::Types: 0
+  MooseX::Types::Moose: 0.21
+  MooseX::Types::Structured: 0.21
+  Tie::MooseObject: 0.0001
+  warnings::register: 0
+resources:
+  repository: git://github.com/bline/Data-Matcher.git
+version: 0.0002
