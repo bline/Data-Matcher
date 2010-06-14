@@ -1,7 +1,7 @@
 use strict;
 package Data::Matcher;
 BEGIN {
-  $Data::Matcher::VERSION = '0.0002';
+  $Data::Matcher::VERSION = '0.0003';
 } # for Pod::Weaver
 # ABSTRACT: simple matching on perl data structures and moose objects
 
@@ -37,7 +37,7 @@ Data::Matcher - simple matching on perl data structures and moose objects
 
 =head1 VERSION
 
-version 0.0002
+version 0.0003
 
 =head1 SYNOPSIS
 

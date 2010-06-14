@@ -39,7 +39,7 @@ my %WriteMakefileArgs = (
     'Tie::MooseObject' => '0.0001',
     'warnings::register' => '0'
   },
-  'VERSION' => '0.0002',
+  'VERSION' => '0.0003',
   'test' => {
     'TESTS' => 't/*.t'
   }

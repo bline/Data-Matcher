@@ -1,7 +1,7 @@
 use strict;
 package Data::Matcher::Rule;
 BEGIN {
-  $Data::Matcher::Rule::VERSION = '0.0002';
+  $Data::Matcher::Rule::VERSION = '0.0003';
 } # for Pod::Weaver
 #ABSTRACT: main code for Data-Matcher, does matching based on rules given
 
@@ -386,7 +386,7 @@ Data::Matcher::Rule - main code for Data-Matcher, does matching based on rules g
 
 =head1 VERSION
 
-version 0.0002
+version 0.0003
 
 =head1 DESCRIPTION
 

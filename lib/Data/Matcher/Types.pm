@@ -1,7 +1,7 @@
 use strict;
 package Data::Matcher::Types;
 BEGIN {
-  $Data::Matcher::Types::VERSION = '0.0002';
+  $Data::Matcher::Types::VERSION = '0.0003';
 } # for Pod::Weaver
 #ABSTRACT: sets up basic types for Data::Matcher
 
@@ -34,7 +34,7 @@ Data::Matcher::Types - sets up basic types for Data::Matcher
 
 =head1 VERSION
 
-version 0.0002
+version 0.0003
 
 =head1 TYPES
 

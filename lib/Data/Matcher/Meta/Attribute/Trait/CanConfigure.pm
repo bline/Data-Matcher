@@ -3,7 +3,7 @@ use strict;
 
 package Data::Matcher::Meta::Attribute::Trait::CanConfigure;
 BEGIN {
-  $Data::Matcher::Meta::Attribute::Trait::CanConfigure::VERSION = '0.0002';
+  $Data::Matcher::Meta::Attribute::Trait::CanConfigure::VERSION = '0.0003';
 }
     use Moose::Role;
     use MooseX::Has::Sugar;
@@ -23,7 +23,7 @@ Data::Matcher::Meta::Attribute::Trait::CanConfigure - trait for attributes which
 
 =head1 VERSION
 
-version 0.0002
+version 0.0003
 
 =head1 DESCRIPTION
 

@@ -2,7 +2,7 @@ use strict;
 #ABSTRACT: internal trait
 package Moose::Meta::Attribute::Custom::Trait::CanConfigure;
 BEGIN {
-  $Moose::Meta::Attribute::Custom::Trait::CanConfigure::VERSION = '0.0002';
+  $Moose::Meta::Attribute::Custom::Trait::CanConfigure::VERSION = '0.0003';
 }
 sub register_implementation {'Data::Matcher::Meta::Attribute::Trait::CanConfigure'}
 
@@ -18,7 +18,7 @@ Moose::Meta::Attribute::Custom::Trait::CanConfigure - internal trait
 
 =head1 VERSION
 
-version 0.0002
+version 0.0003
 
 =head1 DESCRIPTION
 
